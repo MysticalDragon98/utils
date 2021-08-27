@@ -5,7 +5,7 @@ var EventUtils = /** @class */ (function () {
     function EventUtils() {
     }
     EventUtils.waitOnce = function (emitter, event, timeout) {
-        return new Promise(function (reject, resolve) {
+        return new Promise(function (resolve, reject) {
             if (timeout)
                 setTimeout(reject, timeout);
             emitter.once(event, resolve);
