@@ -7,6 +7,7 @@ NodeJS utilities for repetitive tasks
  - [x] Math
  - [x] String
  - [x] Events
+ - [x] Array
 
 ##  Object Module
 ```ts
@@ -44,6 +45,15 @@ class EventsUtils {
 }
 ```
 
+##  Array Module
+```ts
+export class ArrayUtils {
+
+  // Awaits all, shorthand for Promise.all(array.map(asyncFunction))
+  static awaitAll<T, U> (array: T[], asyncFunction: (...args: any[]) => U): Promise<U[]>;
+
+}
+```
 
 ## FileSystem Module
 ```ts

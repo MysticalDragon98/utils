@@ -16,4 +16,5 @@ __exportStar(require("./src/math"), exports);
 __exportStar(require("./src/object"), exports);
 __exportStar(require("./src/string"), exports);
 __exportStar(require("./src/events"), exports);
+__exportStar(require("./src/array"), exports);
 //# sourceMappingURL=index.js.map
