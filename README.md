@@ -6,6 +6,7 @@ NodeJS utilities for repetitive tasks
  - [x] Functions
  - [x] Math
  - [x] String
+ - [x] Events
 
 ##  Object Module
 ```ts
@@ -32,6 +33,14 @@ class FunctionUtils {
   static  getParamNames(func: Function): Array<string>;
   // Get object property ignoring the case, ex. getObjectPropertyIgnoreCase({ Name: "Peter" }, "naMe") => "Peter"
   static  getObjectPropertyIgnoreCase(obj: any, prop: string): any;
+}
+```
+
+##  Events Module
+```ts
+class EventsUtils {
+  // Wait event emitter to emit event, if timeout (ms) is providen promise will fail after that time
+  static waitOnce(emitter: EventEmitter, event: string, timeout?: number): Promise<unknown>;
 }
 ```
 
