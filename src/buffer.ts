@@ -4,8 +4,8 @@ export class BufferUtils {
         for (let i=0;i<buf.length;i++) {
             const num = buf[i];
 
-            for (let j=7;j>=0;j++) {
-                callback((num >> j) & 1, i, j);
+            for (let j=7;j>=0;j--) {
+                callback((num >> j) & 1, i, 7 - j);
             }
         }
     }
@@ -18,7 +18,7 @@ export class BufferUtils {
         for (let i=0;i<buf.length;i++) {
             const num = buf[i];
 
-            for (let j=7;j>=0;j++) {
+            for (let j=7;j>=0;j--) {
                 yield (num >> j) & 1;
             }
         }

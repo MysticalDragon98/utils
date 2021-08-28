@@ -34,8 +34,8 @@ var BufferUtils = /** @class */ (function () {
     BufferUtils.forEachBit = function (buf, callback) {
         for (var i = 0; i < buf.length; i++) {
             var num = buf[i];
-            for (var j = 0; j < 8; j++) {
-                callback((num >> j) & 1, i, j);
+            for (var j = 7; j >= 0; j--) {
+                callback((num >> j) & 1, i, 7 - j);
             }
         }
     };
@@ -52,16 +52,16 @@ var BufferUtils = /** @class */ (function () {
                 case 1:
                     if (!(i < buf.length)) return [3 /*break*/, 6];
                     num = buf[i];
-                    j = 0;
+                    j = 7;
                     _a.label = 2;
                 case 2:
-                    if (!(j < 8)) return [3 /*break*/, 5];
+                    if (!(j >= 0)) return [3 /*break*/, 5];
                     return [4 /*yield*/, (num >> j) & 1];
                 case 3:
                     _a.sent();
                     _a.label = 4;
                 case 4:
-                    j++;
+                    j--;
                     return [3 /*break*/, 2];
                 case 5:
                     i++;
