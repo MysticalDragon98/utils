@@ -1,6 +1,6 @@
 {
   "name": "@mysticaldragon/utils",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "NodeJS utilities for all kind of repetitive tasks.",
   "repository": {
     "type": "git",
