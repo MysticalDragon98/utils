@@ -74,6 +74,10 @@ export declare class StringUtils {
 export declare class BufferUtils {
   // Iterates buffer bit by bit, receives a callback indicating (bit, number index [0, buf.length) and bit index, [0, 7])
   static forEachBit(buf: Buffer, callback: (bit: number, i: number, j: number) => any): void;
+  // Returns 4 bytes buffer from number, useful for size headers
+  static sizeHeader(size: number): Buffer;
+  // Iterates buffer bit by bit, bits are yield as generator
+  static bitStream(buf: Buffer): Generator<number, void, unknown>;
 }
 ```
 

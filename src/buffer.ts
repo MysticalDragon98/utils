@@ -9,4 +9,18 @@ export class BufferUtils {
             }
         }
     }
+
+    static sizeHeader (size: number) {
+        return Buffer.from([0xFF000000 & size, 0x00FF0000 & size, 0x0000FF00 & size, 0x000000FF & size]);
+    }
+
+    static* bitStream (buf: Buffer) {
+        for (let i=0;i<buf.length;i++) {
+            const num = buf[i];
+
+            for (let j=0;j<8;j++) {
+                yield (num >> j) & 1;
+            }
+        }
+    }
 }
