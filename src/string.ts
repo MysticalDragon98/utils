@@ -15,4 +15,17 @@ export class StringUtils {
         return input.replace(/\{\{\s*(.+?)\s*\}\}/g, ($0, $1) => data[$1.trim()]);
     }
 
+    static countMatches (text: string, match: string | RegExp) {
+        let count = 0;
+
+        if (typeof match === "string") match = new RegExp(match, "g");
+        
+        text.replace(match, () => {
+            count++;
+            return "";
+        });
+
+        return count;
+    }
+
 }

@@ -15,6 +15,16 @@ var StringUtils = /** @class */ (function () {
     StringUtils.template = function (input, data) {
         return input.replace(/\{\{\s*(.+?)\s*\}\}/g, function ($0, $1) { return data[$1.trim()]; });
     };
+    StringUtils.countMatches = function (text, match) {
+        var count = 0;
+        if (typeof match === "string")
+            match = new RegExp(match, "g");
+        text.replace(match, function () {
+            count++;
+            return "";
+        });
+        return count;
+    };
     return StringUtils;
 }());
 exports.StringUtils = StringUtils;

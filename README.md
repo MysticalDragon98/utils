@@ -56,6 +56,19 @@ export class ArrayUtils {
 }
 ```
 
+##  String Module
+```ts
+export declare class StringUtils {
+  // Remove all ansi colors from text
+  static escapeANSI(text: string): string;
+  // Replaces {{ key }} inside string for data[key]
+  static template(input: string, data: any): string;
+  // Count number of matches inside a text
+  static countMatches(text: string, match: string | RegExp): number;
+}
+
+```
+
 ##  Buffer Module
 ```ts
 export declare class BufferUtils {
