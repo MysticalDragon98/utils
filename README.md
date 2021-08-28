@@ -8,6 +8,7 @@ NodeJS utilities for repetitive tasks
  - [x] String
  - [x] Events
  - [x] Array
+ - [x] Buffer
 
 ##  Object Module
 ```ts
@@ -52,6 +53,14 @@ export class ArrayUtils {
   // Awaits all, shorthand for Promise.all(array.map(asyncFunction))
   static awaitAll<T, U> (array: T[], asyncFunction: (...args: any[]) => U): Promise<U[]>;
 
+}
+```
+
+##  Buffer Module
+```ts
+export declare class BufferUtils {
+  // Iterates buffer bit by bit, receives a callback indicating (bit, number index [0, buf.length) and bit index, [0, 7])
+  static forEachBit(buf: Buffer, callback: (bit: number, i: number, j: number) => any): void;
 }
 ```
 

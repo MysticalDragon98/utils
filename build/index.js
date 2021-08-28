@@ -17,4 +17,5 @@ __exportStar(require("./src/object"), exports);
 __exportStar(require("./src/string"), exports);
 __exportStar(require("./src/events"), exports);
 __exportStar(require("./src/array"), exports);
+__exportStar(require("./src/buffer"), exports);
 //# sourceMappingURL=index.js.map
